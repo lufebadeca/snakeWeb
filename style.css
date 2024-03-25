@@ -14,8 +14,8 @@ body {
 }
 
 .wrapper {
-    width: 65vmin;
-    height: 70vmin;
+    width: 70vmin;
+    height: 80vmin;
     display: flex;
     flex-direction: column;
     background: #293447;
@@ -38,4 +38,12 @@ body {
     background: #212837;
     display: grid;
     grid-template: repeat(30, 1fr) / repeat(30, 1fr); /* grid tempalte rows + columns*/
+}
+
+.play-board .food {
+    background: red;
+}
+
+.play-board .head {
+    background: rgb(83, 184, 227);
 }
