@@ -39,14 +39,15 @@ const initGame = () => {
         console.log(snakeBody);
     }
 
-    snakeX += velocityX; 
-    snakeY += velocityY;
+    for(let i=snakeBody.length-1; i>0; i--){
+        snakeBody[i] = snakeBody[i-1]
+    }
 
     snakeBody[0] = [snakeX, snakeY];
 
-    for(let i=snakeBody.length; i>0; i--){
-        snakeBody[i] = snakeBody[i-1]
-    }
+    snakeX += velocityX; 
+    snakeY += velocityY;
+    
 
     for(let i=0; i<snakeBody.length; i++ ){
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"></div>`;
@@ -57,7 +58,7 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-setInterval(initGame, 700);
+setInterval(initGame, 130);
 document.addEventListener("keydown", changeDirection);
 
 
