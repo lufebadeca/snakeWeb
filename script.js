@@ -15,6 +15,7 @@ const changeFoodPosition = () => {
 const handleGameOver =() => {
     clearInterval(setIntervalID); //clears the main flow interval storered at setIntervalID
     alert("Game Over");
+    location.reload;
 }
 
 const changeDirection = (e) => {
@@ -63,6 +64,9 @@ const initGame = () => {
     for(let i=0; i<snakeBody.length; i++ ){
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"></div>`;
         // grid area (single square) for point0 Y coordinate / point0 X coordinate, then point 1, point 2...
+        if(i!== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+            gameOver = true;
+        }
     }
     playBoard.innerHTML = htmlMarkup;
 
