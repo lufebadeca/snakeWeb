@@ -1,4 +1,6 @@
 const playBoard = document.querySelector(".play-board");
+const scoreTab = document.querySelector(".score");
+const highestScoreTab = document.querySelector(".high-score");
 
 let gameOver=false;
 let foodX, foodY;
@@ -6,6 +8,10 @@ let snakeX = 10, snakeY = 10;
 let snakeBody = []; // [ [Xhead,Yhead], [X1,Y1] ]
 let velocityX = 0, velocityY = 0;
 let setIntervalID;
+let score=0;
+
+let maximumScore = localStorage.getItem("high-score") || 0;
+highestScoreTab.innerHTML = `Highest score: ${maximumScore}`;
 
 const changeFoodPosition = () => {
     foodX = Math.floor(Math.random() * 30 ) + 1;
@@ -45,6 +51,13 @@ const initGame = () => {
     if(snakeX === foodX && snakeY=== foodY){    //if snake (head) touches food
         changeFoodPosition();
         snakeBody.push([foodX, foodY]);
+        score++;
+
+        maximumScore = score >= maximumScore ? score: maximumScore;
+        localStorage.setItem("high-score", maximumScore);
+        highestScoreTab.innerHTML = `Highest score: ${maximumScore}`;
+
+        scoreTab.innerHTML = `Score: ${score}`
         console.log(snakeBody);
     }
 
