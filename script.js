@@ -9,6 +9,7 @@ let snakeBody = []; // [ [Xhead,Yhead], [X1,Y1] ]
 let velocityX = 0, velocityY = 0;
 let setIntervalID;
 let score=0;
+let gameSpeed = 150;
 
 let maximumScore = localStorage.getItem("high-score") || 0;
 highestScoreTab.innerHTML = `Highest score: ${maximumScore}`;
@@ -20,8 +21,8 @@ const changeFoodPosition = () => {
 
 const handleGameOver =() => {
     clearInterval(setIntervalID); //clears the main flow interval storered at setIntervalID
-    alert("Game Over");
-    location.reload;
+    alert("Game Over. Your score was " + score);
+    location.reload();
 }
 
 const changeDirection = (e) => {
@@ -59,6 +60,9 @@ const initGame = () => {
 
         scoreTab.innerHTML = `Score: ${score}`
         console.log(snakeBody);
+        if(gameSpeed>80){
+            gameSpeed -=2;
+        }
     }
 
     for(let i=snakeBody.length-1; i>0; i--){
@@ -86,7 +90,7 @@ const initGame = () => {
 }
 
 changeFoodPosition();
-setIntervalID = setInterval(initGame, 130);
+setIntervalID = setInterval(initGame, gameSpeed);
 document.addEventListener("keydown", changeDirection);
 
 
