@@ -72,21 +72,18 @@ const initGame = () => {
         console.log(`before, snakeX: ${snakeX}, snakeY: ${snakeY}`);
         if (snakeY < 1) {
             snakeY = mapHeight;
-            console.log("tope bajo");
         }  
-        else if (snakeY >= mapHeight) {
+        else if (snakeY > mapHeight) { //happens first
             snakeY = 1;
-            console.log("tope alto");
         }  
         else if (snakeX < 1) {
             snakeX = mapWidth;
-            console.log("tope izq");
         }  
-        else if (snakeX >= mapWidth) {
+        else if (snakeX > mapWidth) {
             snakeX = 1;
-            console.log("tope der");
         }
         console.log(`after, snakeX: ${snakeX}, snakeY: ${snakeY}`);
+        //wathc out. It's reaching 30 for X and Y when passing by the lower right corner
     }
 
 
