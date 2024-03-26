@@ -1,6 +1,8 @@
 const playBoard = document.querySelector(".play-board");
 const scoreTab = document.querySelector(".score");
 const highestScoreTab = document.querySelector(".high-score");
+const mapWidth = 30;
+const mapHeight = 30;
 
 let gameOver=false;
 let foodX, foodY;
@@ -9,14 +11,14 @@ let snakeBody = []; // [ [Xhead,Yhead], [X1,Y1] ]
 let velocityX = 0, velocityY = 0;
 let setIntervalID;
 let score=0;
-let gameSpeed = 150;
+let gameSpeed = 130;
 
 let maximumScore = localStorage.getItem("high-score") || 0;
 highestScoreTab.innerHTML = `Highest score: ${maximumScore}`;
 
 const changeFoodPosition = () => {
-    foodX = Math.floor(Math.random() * 30 ) + 1;
-    foodY = Math.floor(Math.random() * 30 ) + 1;
+    foodX = Math.floor(Math.random() * mapWidth ) + 1;
+    foodY = Math.floor(Math.random() * mapHeight ) + 1;
 }
 
 const handleGameOver =() => {
@@ -65,18 +67,40 @@ const initGame = () => {
         }
     }
 
-    for(let i=snakeBody.length-1; i>0; i--){
-        snakeBody[i] = snakeBody[i-1]
+    if(snakeX <= 0 || snakeX>mapWidth || snakeY <=0 || snakeY>mapHeight ) {
+        //gameOver=true;
+        console.log(`before, snakeX: ${snakeX}, snakeY: ${snakeY}`);
+        if (snakeY < 1) {
+            snakeY = mapHeight;
+            console.log("tope bajo");
+        }  
+        else if (snakeY >= mapHeight) {
+            snakeY = 1;
+            console.log("tope alto");
+        }  
+        else if (snakeX < 1) {
+            snakeX = mapWidth;
+            console.log("tope izq");
+        }  
+        else if (snakeX >= mapWidth) {
+            snakeX = 1;
+            console.log("tope der");
+        }
+        console.log(`after, snakeX: ${snakeX}, snakeY: ${snakeY}`);
+    }
+
+
+
+    for(let i=snakeBody.length-1; i>0; i--){    //rearrange the rest of the body decreasingly from head snakeX Y
+        snakeBody[i] = snakeBody[i-1];
     }
 
     snakeBody[0] = [snakeX, snakeY];
-
     snakeX += velocityX; 
     snakeY += velocityY;
-    
-    if(snakeX <= 0 || snakeX>30 || snakeY <=0 || snakeY>30 ) {
-        gameOver=true;
-    }
+    //snakeBody[0] = [snakeX, snakeY];
+    //snakeX += velocityX; 
+    //snakeY += velocityY;
 
     for(let i=0; i<snakeBody.length; i++ ){
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]};"></div>`;
