@@ -40,7 +40,7 @@ snakeWeb/
 ```
 
 ### Requirements and considerations
-- >5 years
+- +5 years old
 - PC or laptop
 - Functional arrow buttons in your keyboard
 
@@ -57,10 +57,9 @@ snakeWeb/
 - **CSS3**
 - **JavaScript (ES6)**
 
-
 ## License
 
 This project is under MIT License. Consult the file `LICENSE` for more details.
 
-##Inspiration and credits:
+## Inspiration and credits:
 - https://www.youtube.com/@SINERGIA_AR
