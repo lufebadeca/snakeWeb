@@ -10,11 +10,7 @@ Play with arrow keys. Capture as many food items as you can to earn points until
 
 - Playboard dimentions: 30x30
 - Snake speed increases after each point earned
-- Easy-to-use interface with high reactivity and intuitive
-- Feature to rearrange single list items individualy
-- Filter feature to search by name useful when many items in the list
-- Edit option to modify single list items at any time
-- Delete feature to permanently remove an item
+- Data persistance for highest score
 
 ## Instalation
 
