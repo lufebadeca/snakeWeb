@@ -31,21 +31,21 @@ snakeWeb/
 │
 ├── index.html            # HTML main layout for the game stats and playboard
 ├── script.js             # Javascript logic for the game
-├── style                 # styles for the game graphics
-└── src                   # Javascript application and components logic
+└── style                 # styles for the game graphics
 ```
 
 ### Requirements and considerations
 - +5 years old
 - PC or laptop
-- Functional arrow buttons in your keyboard
+- Functional arrow buttons on your keyboard
 
 ## Technical details
 
-- The application was developed with Vanilla Javascript, HTML and CSS3
-- The playboard is made using display grid
-- The snake body is made of an array with the X and Y position of each point while its location on the board is handled with grid-area parameters
-- The direction and motion of the snake is updated when any of the arrow keys are pressed, changing the values of velocityX and velocityY
+- The application was developed with Vanilla Javascript, HTML and CSS3.
+- The playboard is made using display grid.
+- The snake body is made of an array of points displaying its X and Y positions while their location on the board is handled with grid-area parameters.
+- The direction and motion of the snake is updated when any of the arrow keys are pressed, changing the values of velocityX and velocityY.
+- The food items appear randomly on the board using JS native Math.random() to generate the coordinates.
 
 ## Used technologies
 
