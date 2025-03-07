@@ -30,6 +30,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .play-board {
@@ -42,6 +43,10 @@ body {
 
 .play-board .food {
     background: red;
+}
+
+.play-board .poison {
+    background: rgb(88, 15, 11);
 }
 
 .play-board .head {

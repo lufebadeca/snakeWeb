@@ -10,12 +10,18 @@
     <div class="wrapper">
         <div class="game-details">
             <div class="score">Score: 0</div>
+            <img class="soundIcon " src="./sound-off.png" alt="Sound" width="28px" height="20px">
             <div class="high-score">Highest score: 0</div>
         </div>
         <div class="play-board">
             <!-- JS-written grid component -->
         </div>
     </div>
+
+    <audio id="correctSound" src="./sounds/correct.wav" preload="auto"></audio>
+    <audio id="wrongSound" src="./sounds/wrong.wav" preload="auto"></audio>
+    <audio id="gameOverSound" src="./sounds/game-over.wav" preload="auto"></audio>
+    <audio id="musicSound" src="./sounds/music.mp3" preload="auto"></audio>
     
     <script src="script.js"></script>
 </body>
