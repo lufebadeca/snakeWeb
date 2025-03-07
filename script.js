@@ -118,7 +118,7 @@ const initGame = () => {
         wrongSound.play();
         changePoisonPosition();
         //snakeBody.push([foodX, foodY]);
-        score-=5;
+        score = score >= 5 ? score - 5 : 0;
 
         //maximumScore = score >= maximumScore ? score: maximumScore;
         //localStorage.setItem("high-score", maximumScore);

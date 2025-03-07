@@ -4,7 +4,7 @@ Classic snake Game playable on a web browser
 <img src="https://github.com/user-attachments/assets/8caa5982-f0f3-4d50-be98-099515cdba45" alt="drawing" style="width:200px;"/>
 
 ## Instructions
-Play with arrow keys. Capture as many food items as you can to earn points until you touch the snake's body. Try and beat your highest score!
+Play with arrow keys. Capture as many food items as you can to earn points until you touch the snake's body. Try and beat your highest score. But whatch out for the poisoned food items, the may harm your score!
 
 ## Characteristics
 
@@ -43,9 +43,9 @@ snakeWeb/
 
 - The application was developed with Vanilla Javascript, HTML and CSS3.
 - The playboard is made using display grid.
-- The snake body is made of an array of points displaying its X and Y positions while their location on the board is handled with grid-area parameters.
+- The snake body is made of an array of points displaying its X and Y positions while their location on the board is handled through grid-area parameters.
 - The direction and motion of the snake is updated when any of the arrow keys are pressed, changing the values of velocityX and velocityY.
-- The food items appear randomly on the board using JS native Math.random() to generate the coordinates.
+- The regular food items and poisoned food items appear randomly on the board using JS native Math.random() to generate the coordinates.
 
 ## Used technologies
 
